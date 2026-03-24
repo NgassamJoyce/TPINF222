@@ -1,6 +1,6 @@
 # 📝 Blog Simple API
 
-> API REST complète pour la gestion d'un blog — développée avec **Spring Boot 3**, **MySQL** et documentée avec **Swagger UI**.
+ API REST complète pour la gestion d'un blog , développée avec **Spring Boot 3**, **MySQL** et documentée avec **Swagger UI** en ce servant de la plateforme **CleeRoute**.
 
 ---
 
@@ -43,9 +43,8 @@ CHARACTER SET utf8mb4
 COLLATE utf8mb4_unicode_ci;
 
 
-### `application.properties`
+### application.properties
 
-## properties
 spring.application.name=Blog_simple
 server.port=8080
 
@@ -62,19 +61,18 @@ spring.jpa.properties.hibernate.jdbc.time_zone=Africa/Douala
 spring.jpa.properties.hibernate.format_sql=true
 
 
-> **Note :** Modifiez spring.datasource.username et spring.datasource.password selon votre configuration MySQL locale.
+ **Note :** Modifiez spring.datasource.username et spring.datasource.password selon votre configuration MySQL locale.
 
----
+
 
 ## ▶️ Lancer le projet
 
 # 1. Cloner le dépôt
-git clone https://github.com/votre-username/blog-simple.git
+git clone https://github.com/NgassamJoyce/TPINF222.git
 cd blog-simple
 
 # 2. Compiler et lancer
 mvn spring-boot:run
-
 
 L'application démarre sur **http://localhost:8080**
 
@@ -95,7 +93,7 @@ L'application démarre sur **http://localhost:8080**
 | `GET` | `/api/article/category/{category}` | Filtrer par catégorie |
 | `GET` | `/api/article/date?from=...&to=...` | Filtrer par plage de dates |
 
----
+
 
 ## 📨 Exemples de requêtes
 
