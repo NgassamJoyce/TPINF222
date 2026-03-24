@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${article.title}">Article</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: auto; padding: 20px; background: #f5f5f5; }
+        .navbar { background: #333; padding: 12px 20px; border-radius: 8px; margin-bottom: 30px; }
+        .navbar a { color: white; text-decoration: none; margin-right: 20px; }
+        .card { background: white; border-radius: 10px; padding: 30px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+        .badge { background: #e0f0ff; color: #0066cc; padding: 3px 10px; border-radius: 20px; font-size: 13px; margin-right: 5px; }
+        .meta { color: gray; font-size: 14px; margin-bottom: 20px; }
+        h1 { color: #333; }
+        p { color: #555; line-height: 1.7; }
+    </style>
+</head>
+<body>
+    <div th:replace="fragments/navbar :: navbar"></div>
+
+    <div class="card">
+        <h1 th:text="${article.title}">Titre</h1>
+        <div class="meta">
+            <span class="badge" th:text="${article.category}">Catégorie</span>
+            <span class="badge" th:text="${article.tags}">Tag</span>
+            <span th:text="'Par ' + ${article.autor} + ' | ' + ${article.createdAt}">Auteur</span>
+        </div>
+        <p th:text="${article.contain}">Contenu de l'article</p>
+        <br>
+        <a th:href="@{/blog/edit/{id}(id=${article.id})}" style="color:#f0a500;">✏️ Modifier</a> |
+        <a href="/blog" style="color:#3498db;">← Retour à la liste</a>
+    </div>
+</body>
+</html>
+
+

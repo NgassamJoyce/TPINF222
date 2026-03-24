@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier l'article</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 700px; margin: auto; padding: 20px; background: #f5f5f5; }
+        .navbar { background: #333; padding: 12px 20px; border-radius: 8px; margin-bottom: 30px; }
+        .navbar a { color: white; text-decoration: none; margin-right: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; color: #333; }
+        input, textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; font-size: 14px; }
+        textarea { height: 120px; resize: vertical; }
+        .btn-submit { background: #f0a500; color: white; padding: 10px 25px; border: none; border-radius: 6px; cursor: pointer; font-size: 15px; }
+        h1 { color: #333; }
+    </style>
+</head>
+<body>
+    <div th:replace="fragments/navbar :: navbar"></div>
+
+    <h1>🔧 Modifier l'article</h1>
+
+    <form th:action="@{/blog/edit/{id}(id=${article.id})}" method="post">
+        <div class="form-group">
+            <label>Titre *</label>
+            <input type="text" name="title" th:value="${article.title}"/>
+        </div>
+        <div class="form-group">
+            <label>Contenu</label>
+            <textarea name="contain" th:text="${article.contain}"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Auteur</label>
+            <input type="text" name="autor" th:value="${article.autor}"/>
+        </div>
+        <div class="form-group">
+            <label>Catégorie *</label>
+            <input type="text" name="category" th:value="${article.category}"/>
+        </div>
+        <div class="form-group">
+            <label>Tags *</label>
+            <input type="text" name="tags" th:value="${article.tags}"/>
+        </div>
+        <button type="submit" class="btn-submit">💾 Enregistrer les modifications</button>
+    </form>
+</body>
+</html>
